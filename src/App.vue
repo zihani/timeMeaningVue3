@@ -1,31 +1,21 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import { ref } from 'vue'
-import TinymceEdit from '@/views/TinymceEdit.vue'
-// export default {
-//   data(){
-//      return{
-//          name:"张三"
-//      }
-//   },
-//   created(){
-//     // 可以正常获取
-//     this.name
-//   },
-//   mounted(){
-//     //this 指向 Proxy
-//     this.name
-//     console.log(this.count) // 0
-//   }
-// }
+import Header from '@/components/layout/Header.vue'
+import Body from '@/components/layout/Body.vue'
+import Footer from '@/components/layout/Footer.vue'
+import Loading from '@/components/public/loading.vue'
 
 </script>
 <template>
-  <header>
-      <TinymceEdit />
-  </header>
-  <RouterView />
+  <div id="app" v-if="true">
+    <!-- <Loading></Loading> -->
+    <Header></Header>
+    <!-- <Body></Body> -->
+    <!-- <Footer></Footer> -->
+  </div>
 </template>
-
-<style scoped>
+<style scoped lang="less">
+#app {
+  font-size: 17px;
+  color: #6f6f6f;
+}
 </style>
