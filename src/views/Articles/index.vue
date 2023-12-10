@@ -3,17 +3,13 @@ import { ref } from 'vue'
 import Banner from "@/components/public/Banner.vue"
 </script>
 <template>
-    <div class="ArticleList">
+    <div class="Articles">
         <Banner></Banner>
         <div class="site-content">
+            1111111111111111
         </div>
         <div class="site-content">
-            list
-            list
-            list
-            list
-            list
-            list
+      
         </div>
     </div>
 </template>

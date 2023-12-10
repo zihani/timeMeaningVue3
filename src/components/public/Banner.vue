@@ -1,17 +1,9 @@
 <script setup lang="ts">
-  import { onMounted, ref,defineComponent  } from "vue";
-  import {useBannerStore ,useBannerSetopStore} from "@/stores/useBannerStore"
-  const banner = useBannerStore()
-  const bannersetop = useBannerSetopStore()
-//   console.log(banner.isHome)
-//   console.log(banner.count)
-//   console.log(banner.increment()) //调用actions函数
-    //  console.log(banner)
-//   const ann =(()=>{
-//     banner.increment()
-//     isHome.value = banner.isHome
-//     bannersetop.increment()
-//   })
+    import { onMounted, ref,defineComponent  } from "vue";
+    import {useBannerStore ,useBannerSetopStore} from "@/stores/useBannerStore"
+
+    //   const bannersetop = useBannerSetopStore()
+    
     const loading = ref(false)
     const websiteInfo = ref({slogan:"博客"})
     const socials =  ref([])
@@ -44,6 +36,7 @@
     const touchInput = ref(false)
     onMounted(()=>{
         initanimation()
+        banner.getisHome
     })
     const initanimation = (()=>{
             canvas.value = document.querySelector('canvas')
@@ -293,8 +286,8 @@
             width: 100%;
             height: 100%;
             /* 背景渐变 */
-            background-image: linear-gradient(-225deg, rgb(56, 35, 73) 40%,
-            #332251 80%,  #36343d 100%);
+            background-image: linear-gradient(-225deg, rgb(207, 202, 211) 40%,
+        #2d2633 80%,  #35343b 100%);
             &:hover {
                 transform: unset;
                 filter: unset;

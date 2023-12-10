@@ -1,11 +1,11 @@
 
 <script  setup lang="ts">
-// import {useRoute} from 'vue-router'
-// const route=useRoute()
+import TablePet from '@/components/public/TablePet.vue'
 </script>
 <template>
     <div id="layout-body">
         <router-view></router-view>
+        <TablePet></TablePet>
     </div>
 </template>
 <style scoped>

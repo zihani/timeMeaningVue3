@@ -10,7 +10,11 @@ export const useBannerStore = defineStore(
       strsting:"2233"
     }),
     getters: {
-       getisHome: (state) => state.isHome = !state.isHome,
+       getisHome:((state)=>{
+          setTimeout(function() {  
+            state.isHome = !state.isHome
+          }, 2000);
+       }),
        double: (state) => state.count * 2,
     },
     actions: {
