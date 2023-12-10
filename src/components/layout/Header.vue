@@ -1,11 +1,9 @@
 <script setup lang="ts">
-   import { onMounted, ref } from "vue";
-   export interface urlInfo {
-	href?:String;
-   }
-   const mobileShow = ref(false) 
-   const hidden = ref(false) 
-   const fixed = ref(false)
+   import { onMounted,onUnmounted, ref } from "vue";
+   const mobileShow = ref(false);
+   const hidden = ref(false);
+   const fixed = ref(false);
+   const lastScrollTop = ref(0);
    const iconUrl = '/icon/movenavbar.svg';
    const isref = ref()
    const menu = [{href:"https://www.yuque.com/u1261089/va0mph/gr8vg4gzg0akzvz0",
@@ -23,25 +21,42 @@
         window.open(item.href)
    }
    const openArticle=(item:Object)=>{
+        lastScrollTop.value++;
    }
    const openGallery=(item:Object)=>{
    }
-   
+   const watchScroll =()=>{
+        let scrollTop: number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        if (scrollTop ===0 ){
+            fixed.value = false;
+        } else if (scrollTop>=lastScrollTop.value){
+            fixed.value = false;
+            hidden.value = true;
+        } else {
+            fixed.value = true
+            hidden.value = false
+        }
+        lastScrollTop.value = scrollTop
+   }
+   onMounted(()=>{
+        window.addEventListener('scroll', watchScroll)
+   })
+   onUnmounted(()=>{
+        window.removeEventListener("scroll", watchScroll)
+   })
 </script>
 <template>
     <div id="layout-header" :class="{'fixed':fixed,'hidden':hidden}" @click.stop="mobileShow=false">
         <div class="site-logo">
-            天气预报logo
-            <router-link to="/">
-                <!-- <img src="@/assets/img/touxiang.jpg" alt=""> -->
-            </router-link>
+           <!-- logo  <Button @click="openArticle">{{ lastScrollTop }}</Button> -->
+           logo
         </div>
         <div class="menus-btn" @click.stop="mobileShow=!mobileShow">
             <!-- 导航 -->
             <!-- <img style="width: 20px; height: 20px;" :src="iconUrl"> -->
         </div>
         <div class="site-menus" :class="{'mobileShow':mobileShow}" @click.stop="mobileShow=!mobileShow">
-            <div class="menu-item header-search"><header-search/></div>
+            <div class="menu-item header-search"></div>
             <div class="menu-item"><router-link to="/">首页</router-link></div>
             <div class="menu-item hasChild">
                 <a href="#" @click="openUrl({href:`https://www.yuque.com/dashboard`})">语雀文章</a>
@@ -65,7 +80,7 @@
         position: fixed;
         top: 0;
         z-index: 9;
-        width: 90%;
+        width: 100%;
         height: 80px;
         padding: 0 80px;
         display: flex;
@@ -100,7 +115,7 @@
             top: -10px;
         }
     }
-    .menus-btn{
+    .menus-btn {
         display: none;
         visibility: hidden;
     }

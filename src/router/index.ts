@@ -8,7 +8,15 @@ const router = createRouter({
         path: '/',
         name: 'home',
         component: HomeView
-      },
+      }
+      // {
+      //   path: "/gallery",
+      //   name: "archive",
+      //   component: () => import("@/view/Gallery/index.vue"),
+      //   meta: {
+      //     keepAlive: false, //需要缓存
+      //   },
+      // }
     ]
 })
 

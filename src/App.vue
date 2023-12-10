@@ -6,12 +6,10 @@ import Loading from '@/components/public/loading.vue'
 
 </script>
 <template>
-  <div id="app" v-if="true">
     <!-- <Loading></Loading> -->
     <Header></Header>
-    <!-- <Body></Body> -->
-    <!-- <Footer></Footer> -->
-  </div>
+    <Body></Body>
+    <Footer></Footer>
 </template>
 <style scoped lang="less">
 #app {

@@ -1,65 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Banner from "@/components/public/Banner.vue"
-// import {bannerStore} from "@/stores/banner";
-//   const banner = bannerStore()
-  const button =(()=>{
-    // banner.setisHome()
-  })
-//   {{banner.isHome.value}}
-
 </script>
 <template>
-    <div class="Home">
-        <Banner></Banner>   
-        <Button @click="button">按钮</Button>
+    <div class="ArticleList">
         <div class="site-content">
           
         </div>
         <div class="site-content">
-            <!--通知栏-->
-            <!-- 
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表
-            文章列表 -->
+          
         </div>
     </div>
 </template>
