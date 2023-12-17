@@ -4,9 +4,9 @@
    import anime from 'animejs'
    export default defineComponent({  
         setup() {  
-            let TablePetStore = useTablePetStore
-            debugger
-            let show:Boolean = ref(true)
+            let TablePetStore = useTablePetStore()
+            TablePetStore.show
+            let show:Boolean = ref(false)
             let dialogueshow:Boolean = ref(false)
             const newdate = ""
             const dialogue = "hell"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { onMounted, ref,defineComponent  } from "vue";
     import {useBannerStore ,useBannerSetopStore} from "@/stores/useBannerStore"
-
+    const banner = useBannerStore()
     //   const bannersetop = useBannerSetopStore()
     
     const loading = ref(false)

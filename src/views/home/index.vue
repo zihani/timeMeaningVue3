@@ -3,7 +3,7 @@ import { defineComponent ,ref ,onMounted } from 'vue'
 import Banner from "@/components/public/Banner.vue"
 import Post from '@/components/post'
 import Articlelist from "./common/index"
-const postList =Articlelist
+const postList = Articlelist
 // const hideSlogan = ''
 </script>
 <template>

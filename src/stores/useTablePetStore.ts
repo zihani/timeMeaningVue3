@@ -4,7 +4,7 @@ import { reactive, ref ,computed} from "vue";
 // 定义用户状态仓库
 export const useTablePetStore = defineStore(
   "tablePet",()=>{
-    const show = ref(true)
+    const show = ref(false)
     function increment() {
       debugger
       show.value = !show.value
