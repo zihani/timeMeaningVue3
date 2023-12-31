@@ -70,8 +70,8 @@ const tooltiptextshow = ref(false)
         todoListStore.removeStorageitem("todoList",item.id)
    }
    const ontodoChange = (item:any)=>{
-    
-        todoListStore.setUpdateStorageListState('todoList',item.id)
+         todoListStore.newStorageListState('todoList')
+        // todoListStore.setUpdateStorageListState('todoList',item.id)
    }
    const istodoshow = ()=>{
         todoListStore.updatetodoShow()

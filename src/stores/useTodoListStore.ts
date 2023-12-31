@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { reactive, ref ,computed} from "vue";
+import { reactive, ref ,computed,watchEffect } from "vue";
 import type { Ref } from "vue";
 import localforage from 'localforage'
 //创建一个 indexedDB
@@ -24,6 +24,7 @@ export const useTodoListStore = defineStore(
     const todoshow = ref(false)
     const todotitle: Ref<string> = ref("待办")
     const todoList: Ref<Array<object>> = ref([])
+    debugger
     const capacity: Ref<Number> = ref(50)
     const InlineMessage: Ref<Object> =ref({
       messageShow: false,
@@ -43,7 +44,7 @@ export const useTodoListStore = defineStore(
         }
       })
     };
-    //写入本地仓库
+    //写入一条text本地仓库
     function setStorageList(key:string,todotext:Ref<string>){
       if(key === 'todoList'){
         debugger
@@ -56,6 +57,12 @@ export const useTodoListStore = defineStore(
         console.log(todoList._rawValue)
       }
       setStorage(key,todoList._rawValue)
+    };
+      //更新Storage
+    function newStorageListState(key:string){
+      if(key === 'todoList'){
+        setStorage(key,todoList._rawValue)
+      }
     };
     function setUpdateStorageListState(key:string,id:Number){
       if(key === 'todoList'){
@@ -152,5 +159,8 @@ export const useTodoListStore = defineStore(
       return todolist
     };
 
-    return {todoshow,todotitle,todoList,updatetodoShow,getStorageList,setStorageList,removeStorageitem,removeAllStorage,setUpdateStorageListState,exportStoragetext,importTodoList,InlineMessage}
+    return {todoshow,todotitle,todoList,
+      updatetodoShow,getStorageList,setStorageList,
+      removeStorageitem,removeAllStorage,setUpdateStorageListState,
+      exportStoragetext,importTodoList,InlineMessage,newStorageListState}
 });
