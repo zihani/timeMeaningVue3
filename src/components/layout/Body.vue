@@ -1,11 +1,13 @@
 
 <script  setup lang="ts">
-// import {useRoute} from 'vue-router'
-// const route=useRoute()
+import TablePet from '@/components/public/TablePet.vue'
+import TodoList from '@/components/public/TodoList/index.vue'
 </script>
 <template>
     <div id="layout-body">
         <router-view></router-view>
+        <TablePet></TablePet>
+        <TodoList></TodoList>
     </div>
 </template>
 <style scoped>

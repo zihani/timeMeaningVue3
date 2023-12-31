@@ -1,37 +1,19 @@
 <script setup lang="ts">
-import { defineComponent ,ref ,onMounted } from 'vue'
+import { ref } from 'vue'
 import Banner from "@/components/public/Banner/index.vue"
-import { useArticleListStore } from "@/stores/useArticleListStore"
-import ArticleItem from "@/components/ArticleItem/index.vue"
-const articleListStore = useArticleListStore(); //这是个函数
-articleListStore.articleTable
 </script>
 <template>
-    <div class="Home">
-        <Banner></Banner>   
+    <div class="ArticleList">
+        <Banner></Banner>
         <div class="site-content">
-           啦啦啦啦啦啦啦哈哈哈哈哈哈哈哈哈
         </div>
         <div class="site-content">
-            <!--通知栏-->
-            <!--文章列表-->
-            <!-- {{ postList }} -->
-            <main class="site-main" >
-                <div class="w-100">
-                    <div class="news">
-                      <div class="flex">
-                        <SvgIcon icon-class="laba" size="1.2rem"></SvgIcon>
-                      </div>
-                      <template v-for="item in articleListStore.articleTable">
-                        <ArticleItem :article="item"></ArticleItem>
-                      </template>
-                      <div class="flex arrow-right">
-                        <el-icon :size="20"><DArrowRight /></el-icon>
-                      </div>
-                    </div>
-                </div>
-            </main>
-            <!--加载更多--> 
+            list
+            list
+            list
+            list
+            list
+            list
         </div>
     </div>
 </template>
@@ -119,20 +101,4 @@ articleListStore.articleTable
     }
 }
 /******/
-.arrow-right {
-    animation: arrow-right-shake 1.5s ease-out infinite;
-}
-.news {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 20px;
-    margin: 0 8px;
-    border-radius: 15px;
-}
-.w-100 {
-    width: 100%;
-}
-
 </style>
-
